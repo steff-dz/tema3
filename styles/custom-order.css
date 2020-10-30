@@ -9,6 +9,7 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	position: relative;
 }
 
 #orderPageTitle {
@@ -22,11 +23,21 @@ main {
 	font-size: 1.5rem;
 	padding: 1rem;
 	border: 1px solid black;
-	max-height: 250px;
+	max-height: 25rem;
 	overflow: scroll;
 	overflow-x: hidden;
 }
 
+.fa-hammer {
+	font-size: 3rem;
+	z-index: 10;
+	position: absolute;
+	bottom: 3.5rem;
+	left: 3rem;
+}
+
 #startButton {
-	width: 20rem;
+	width: 15rem;
+	height: 3rem;
+	margin-top: 3rem;
 }
