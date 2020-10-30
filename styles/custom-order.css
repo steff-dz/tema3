@@ -1,0 +1,32 @@
+body {
+	margin: 0;
+}
+
+main {
+	margin: 1rem;
+	/* background-color: lightcyan; */
+	height: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#orderPageTitle {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 0;
+	font-weight: normal;
+}
+
+#orderGuide {
+	font-size: 1.5rem;
+	padding: 1rem;
+	border: 1px solid black;
+	max-height: 250px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+#startButton {
+	width: 20rem;
+}
