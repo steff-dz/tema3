@@ -4,12 +4,13 @@ body {
 
 main {
 	margin: 1rem;
-	/* background-color: lightcyan; */
+	background-color: lightcyan;
 	height: fit-content;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	position: relative;
+	padding: 10px;
 }
 
 #orderPageTitle {
@@ -26,6 +27,7 @@ main {
 	max-height: 25rem;
 	overflow: scroll;
 	overflow-x: hidden;
+	display: flex;
 }
 
 .fa-hammer {
@@ -40,4 +42,53 @@ main {
 	width: 15rem;
 	height: 3rem;
 	margin-top: 3rem;
+}
+
+#orderContainer {
+	width: 90%;
+	height: fit-content;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+label {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-top: 5px;
+	margin-left: 15px;
+	flex: 5 0 100%;
+}
+
+input {
+	margin: 10px auto;
+	padding: 4px;
+}
+
+input[name="name"] {
+	width: 40%;
+}
+
+input[name="email"],
+input[name="location"] {
+	width: 90%;
+}
+
+#progressContainer {
+	height: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+}
+
+#progressContainer div {
+	border: 1px solid black;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: 2.5rem;
 }
