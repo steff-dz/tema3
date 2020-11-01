@@ -6,22 +6,14 @@ const startButton = document.querySelector('#startButton');
 const orderGuide = document.querySelector('#orderGuide');
 const formContainer = document.querySelector('#formContainer');
 
-//startButton.addEventListener('click',
-//startButton.addEventListener('click', nextPage, false);
-
 startButton.addEventListener('click', function() {
 	dropHammer(enterForm);
 });
 
-function dropHammer(cb) {
-	//console.log(`dropping the hammer`);
-	hammer.classList.toggle('hammerDown');
-	return setTimeout(cb, 800);
-}
-
 function enterForm() {
-	//console.log(`the hammer has been dropped`);
-	hammer.classList.toggle('hammerUp', 'hammerDown');
+	hammer.classList.add('hammerUp');
+	hammer.classList.remove('hammerDown');
+
 	main.style.border = '1px solid black';
 
 	//REMOVING STUFF FROM FIRST PAGE
@@ -63,10 +55,27 @@ function enterForm() {
 
 	const formButton = document.querySelector('#formButton');
 	formButton.addEventListener('click', function() {
-		randomFunction(event);
+		pickUpHammer(event);
 	});
-	function randomFunction(event) {
-		event.preventDefault();
-		main.style.backgroundColor = 'red';
-	}
+}
+
+function dropHammer(cb) {
+	//console.log(`dropping the hammer`);
+	hammer.classList.toggle('hammerDown');
+	return setTimeout(cb, 800);
+}
+
+function pickUpHammer(event) {
+	event.preventDefault();
+	hammer.classList.remove('hammerUp');
+	dropHammer(secondForm);
+}
+
+function secondForm() {
+	console.log('meeep');
+	hammer.classList.add('hammerUp');
+	hammer.classList.remove('hammerDown');
+
+	const formContainer = document.querySelector('#formContainer');
+	console.log(formContainer);
 }
