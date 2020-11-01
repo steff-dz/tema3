@@ -77,5 +77,9 @@ function secondForm() {
 	hammer.classList.remove('hammerDown');
 
 	const formContainer = document.querySelector('#formContainer');
-	console.log(formContainer);
+	const labels = document.querySelectorAll('label');
+	labels[0].innerText = 'Product Type';
+	labels[1].innerText = 'Materiel Type';
+	labels[2].innerText = 'Finish';
+	console.log(labels, formContainer);
 }
