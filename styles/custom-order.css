@@ -58,9 +58,27 @@ main {
 	transform: translateX(-0) translateY(0) rotate(0deg);
 }
 
+#progressContainer {
+	height: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+}
+
+#progressContainer div {
+	border: 1px solid black;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
 form {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 label {
@@ -85,19 +103,8 @@ input[name="location"] {
 	width: 90%;
 }
 
-#progressContainer {
-	height: 50px;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 15px;
-}
-
-#progressContainer div {
-	border: 1px solid black;
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	font-size: 2.5rem;
+#formButton {
+	width: 70%;
+	margin-top: 3rem;
+	padding: .5rem;
 }

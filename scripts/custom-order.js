@@ -2,14 +2,14 @@ const main = document.querySelector('#main');
 nav.after(main);
 
 const hammer = document.querySelector('.fa-hammer');
-const formButton = document.querySelector('#startButton');
+const startButton = document.querySelector('#startButton');
 const orderGuide = document.querySelector('#orderGuide');
 const formContainer = document.querySelector('#formContainer');
 
 //startButton.addEventListener('click',
 //startButton.addEventListener('click', nextPage, false);
 
-formButton.addEventListener('click', function() {
+startButton.addEventListener('click', function() {
 	dropHammer(enterForm);
 });
 
@@ -23,33 +23,15 @@ function enterForm() {
 	//console.log(`the hammer has been dropped`);
 	hammer.classList.toggle('hammerUp', 'hammerDown');
 	main.style.border = '1px solid black';
-	formButton.innerText = 'Next';
 
+	//REMOVING STUFF FROM FIRST PAGE
 	main.removeChild(main.children[0]);
 	main.removeChild(orderGuide);
+	main.removeChild(startButton);
 
-	const formContainer = document.createElement('div');
-
-	formContainer.id = 'formContainer';
-	main.appendChild(formContainer);
-	main.insertBefore(formContainer, startButton);
-
-	formContainer.innerHTML = `
-	<form>
-	<label>NAME</label>
-	<input type="text" name="name" "class="name-input" placeholder="first name"></input>
-	<input type="text" name="name" "class="name-input" placeholder="last name"></input>
-	<label>Email</label>
-	<input type="email" name="email" placeholder="email here"></input>
-	<label>Location</label>
-	<input type="text" name="location" placeholder="type your city in Norway here"
-	</form>
-	`;
-
+	//CREATING THE PROGRESS BAR
 	const progressContainer = document.createElement('div');
-
 	progressContainer.id = 'progressContainer';
-
 	document.body.appendChild(progressContainer);
 	main.before(progressContainer);
 
@@ -61,9 +43,30 @@ function enterForm() {
 
 	progressContainer.children[0].style.backgroundColor = 'lightgreen';
 
-	// formButton.addEventListener('click', randomFunction);
+	//CREATING THE FORM
+	const formContainer = document.createElement('div');
+	formContainer.id = 'formContainer';
+	main.appendChild(formContainer);
 
-	// function randomFunction() {
-	// 	main.style.backgroundColor = 'red';
-	// }
+	formContainer.innerHTML = `
+	<form>
+	<label>NAME</label>
+	<input type="text" name="name" "class="name-input" placeholder="first name"></input>
+	<input type="text" name="name" "class="name-input" placeholder="last name"></input>
+	<label>Email</label>
+	<input type="email" name="email" placeholder="email here"></input>
+	<label>Location</label>
+	<input type="text" name="location" placeholder="type your city in Norway here"</input>
+	<button id="formButton">Next</button>
+	</form>
+	`;
+
+	const formButton = document.querySelector('#formButton');
+	formButton.addEventListener('click', function() {
+		randomFunction(event);
+	});
+	function randomFunction(event) {
+		event.preventDefault();
+		main.style.backgroundColor = 'red';
+	}
 }
