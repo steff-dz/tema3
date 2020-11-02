@@ -134,8 +134,33 @@ function secondForm() {
 function thirdForm() {
 	hammer.classList.add('hammerUp');
 	hammer.classList.remove('hammerDown');
+
 	progressContainer.children[2].style.backgroundColor = 'lightgreen';
+
+	let form = document.querySelector('form');
 	form.innerHTML = '';
+	form.innerHTML = `
+	<h2 id="budgetTitle">Budget</h2>
+	<div class="budgetOptionContainer">
+	<input type="radio" name="priceRange1" value="1,500 - 5,000"><label class="priceLabel" for="priceRange1">1,500 - 5,000 kr</label>
+
+	</div>
+	
+	<div class="budgetOptionContainer">
+	<input type="radio" name="priceRange2" value="5,000 - 10,000">
+	<label class="priceLabel" for="priceRange2">5,000 - 10,000 kr</label>
+	</div>
+
+	<div class="budgetOptionContainer">
+	<input type="radio" name="priceRange3" value="10,00+">
+   <label class="priceLabel" for="priceRange3">above 10,000 kr</label>
+	</div>
+
+	<h2 id="messageBoxTitle">Message</h2>
+	<textarea id="messageBox" name="messageBox" rows="5" cols="30">Give us more details and information about the custom furniture piece you would like</textarea>
+
+   <button id="submitButton">Submit</button>
+	`;
 }
 
 function pickUpHammer(event) {

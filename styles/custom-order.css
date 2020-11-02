@@ -103,7 +103,8 @@ input[name="location"] {
 	width: 90%;
 }
 
-#formButton {
+#formButton,
+#submitButton {
 	width: 70%;
 	margin-top: 3rem;
 	padding: .5rem;
@@ -111,4 +112,37 @@ input[name="location"] {
 
 .selection {
 	width: 90%;
+}
+
+#budgetTitle,
+#messageBoxTitle {
+	width: 100%;
+	text-align: left;
+}
+.budgetOptionContainer {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 40px;
+	border: 1px solid black;
+	align-items: center;
+	background-color: yellow;
+	padding: 1px;
+}
+
+input[type="radio"] {
+	padding: 0;
+	margin: 0;
+	width: 40px;
+	margin-top: 5px;
+	align-self: flex-start;
+}
+
+.priceLabel {
+	margin: 0;
+	flex: 0 0 0%;
+	padding: 0;
+	width: fit-content;
+	border: 1px solid black;
+	background-color: lightblue;
 }
