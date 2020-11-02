@@ -36,23 +36,6 @@ function enterForm() {
 	progressContainer.children[0].style.backgroundColor = 'lightgreen';
 
 	firstForm();
-	//CREATING THE FORM
-	// const formContainer = document.createElement('div');
-	// formContainer.id = 'formContainer';
-	// main.appendChild(formContainer);
-
-	// formContainer.innerHTML = `
-	// <form>
-	// <label>NAME</label>
-	// <input type="text" name="name" "class="name-input" placeholder="first name"></input>
-	// <input type="text" name="name" "class="name-input" placeholder="last name"></input>
-	// <label>Email</label>
-	// <input type="email" name="email" placeholder="email here"></input>
-	// <label>Location</label>
-	// <input type="text" name="location" placeholder="type your city in Norway here"</input>
-	// <button id="formButton">Next</button>
-	// </form>
-	// `;
 
 	const formButton = document.querySelector('#formButton');
 	formButton.addEventListener('click', function() {
@@ -94,6 +77,7 @@ const firstForm = () => {
 function secondForm() {
 	hammer.classList.add('hammerUp');
 	hammer.classList.remove('hammerDown');
+	progressContainer.children[1].style.backgroundColor = 'lightgreen';
 
 	//Here I am creating a reference to the form and the inputs
 	const form = document.querySelector('form');
@@ -110,7 +94,7 @@ function secondForm() {
 	labels[1].innerText = 'Materiel Type';
 	labels[2].innerText = 'Finish';
 
-	//Now I will create and append selection fields
+	//Now I will create and append/insert selection fields
 	let selectables = [ 'select1', 'select2', 'select3' ];
 
 	selectables.forEach((el) => {
@@ -124,4 +108,26 @@ function secondForm() {
 	form.insertBefore(selections[0], labels[1]);
 	form.insertBefore(selections[1], labels[2]);
 	form.insertBefore(selections[2], formButton);
+
+	selections[0].innerHTML += `
+	<option>Table</option>
+	<option>Desk</option>
+	<option>Shelf</option>
+	<option>Chair</option>
+	<option>Stool</option>
+	<option>Containers</option>
+	`;
+
+	selections[1].innerHTML += `
+	<option>Plywood</option>
+	<option>Solid Wood</option>
+	<option>MDF Composit Wood</option>
+	<option>Metal</option>
+
+	`;
+
+	selections[2].innerHTML += `
+	<option>Oil/Wax</option>
+	<option>Paint</option>
+	`;
 }

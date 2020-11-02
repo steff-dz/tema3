@@ -108,3 +108,7 @@ input[name="location"] {
 	margin-top: 3rem;
 	padding: .5rem;
 }
+
+.selection {
+	width: 90%;
+}
