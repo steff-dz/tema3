@@ -4,7 +4,6 @@ nav.after(main);
 const hammer = document.querySelector('.fa-hammer');
 const startButton = document.querySelector('#startButton');
 const orderGuide = document.querySelector('#orderGuide');
-//const formContainer = document.querySelector('#formContainer');
 
 startButton.addEventListener('click', function() {
 	dropHammer(enterForm);
@@ -43,17 +42,17 @@ function enterForm() {
 	});
 }
 
-function dropHammer(cb) {
-	//console.log(`dropping the hammer`);
-	hammer.classList.toggle('hammerDown');
-	return setTimeout(cb, 800);
-}
+// function dropHammer(cb) {
+// 	//console.log(`dropping the hammer`);
+// 	hammer.classList.toggle('hammerDown');
+// 	return setTimeout(cb, 800);
+// }
 
-function pickUpHammer(event) {
-	event.preventDefault();
-	hammer.classList.remove('hammerUp');
-	dropHammer(secondForm);
-}
+// function pickUpHammer(event) {
+// 	event.preventDefault();
+// 	hammer.classList.remove('hammerUp');
+// 	dropHammer(secondForm);
+// }
 
 const firstForm = () => {
 	let formContainer = document.createElement('div');
@@ -80,7 +79,7 @@ function secondForm() {
 	progressContainer.children[1].style.backgroundColor = 'lightgreen';
 
 	//Here I am creating a reference to the form and the inputs
-	const form = document.querySelector('form');
+	let form = document.querySelector('form');
 	const inputs = document.querySelectorAll('input');
 
 	//Here I am creating a FOR OF loop to remove each input in the form
@@ -130,4 +129,27 @@ function secondForm() {
 	<option>Oil/Wax</option>
 	<option>Paint</option>
 	`;
+}
+
+function thirdForm() {
+	hammer.classList.add('hammerUp');
+	hammer.classList.remove('hammerDown');
+	progressContainer.children[2].style.backgroundColor = 'lightgreen';
+	form.innerHTML = '';
+}
+
+function pickUpHammer(event) {
+	event.preventDefault();
+	hammer.classList.remove('hammerUp');
+	if (progressContainer.children[1].style.backgroundColor === 'lightgreen') {
+		dropHammer(thirdForm);
+	} else {
+		dropHammer(secondForm);
+	}
+}
+
+function dropHammer(cb) {
+	//console.log(`dropping the hammer`);
+	hammer.classList.add('hammerDown');
+	return setTimeout(cb, 800);
 }
