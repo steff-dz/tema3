@@ -111,8 +111,17 @@ function secondForm() {
 	labels[2].innerText = 'Finish';
 
 	//Now I will create and append selection fields
-	// 	let selectables = ["select1", "select2", "select3"]
-	// 	selectables.forEach((el) => {
+	let selectables = [ 'select1', 'select2', 'select3' ];
 
-	// 	})
+	selectables.forEach((el) => {
+		let select = document.createElement('select');
+		select.className = 'selection';
+		select.innerHTML = el;
+		form.appendChild(select);
+	});
+
+	const selections = document.querySelectorAll('.selection');
+	form.insertBefore(selections[0], labels[1]);
+	form.insertBefore(selections[1], labels[2]);
+	form.insertBefore(selections[2], formButton);
 }
