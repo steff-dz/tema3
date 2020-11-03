@@ -141,20 +141,18 @@ function thirdForm() {
 	form.innerHTML = '';
 	form.innerHTML = `
 	<h2 id="budgetTitle">Budget</h2>
-	<div class="budgetOptionContainer">
-	<input type="radio" name="priceRange1" value="1,500 - 5,000"><label class="priceLabel" for="priceRange1">1,500 - 5,000 kr</label>
 
-	</div>
-	
-	<div class="budgetOptionContainer">
-	<input type="radio" name="priceRange2" value="5,000 - 10,000">
-	<label class="priceLabel" for="priceRange2">5,000 - 10,000 kr</label>
-	</div>
+	<label class="priceContainer">1,500 - 5,000 kr<input type="radio" class="budgetOption" name="radio" value="1,500 - 5,000">
+	<span class="checkmark"></span>
+	</label>
 
-	<div class="budgetOptionContainer">
-	<input type="radio" name="priceRange3" value="10,00+">
-   <label class="priceLabel" for="priceRange3">above 10,000 kr</label>
-	</div>
+	<label class="priceContainer">5,000 - 10,000 kr<input type="radio" class="budgetOption" name="radio" value="5,000 - 10,000">
+	<span class="checkmark"></span>
+	</label>
+
+	<label class="priceContainer">above 10,000<input type="radio" class="budgetOption" name="radio" value="10,000 +">
+	<span class="checkmark"></span>
+	</label>
 
 	<h2 id="messageBoxTitle">Message</h2>
 	<textarea id="messageBox" name="messageBox" rows="5" cols="30">Give us more details and information about the custom furniture piece you would like</textarea>
